@@ -1,0 +1,47 @@
+[System]
+Name='BM_17_019'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=5
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='like'
+Range=[0 1]
+NumMFs=5
+MF1='cokDusuk':'trimf',[-0.25 0 0.202380952380952]
+MF2='dusuk':'trimf',[0 0.197089947089947 0.396]
+MF3='orta':'trimf',[0.202 0.499 0.794973544973545]
+MF4='yuksek':'trimf',[0.602 0.8 0.900793650793651]
+MF5='cokYuksek':'trimf',[0.797619047619048 1 1.25]
+
+[Input2]
+Name='dislike'
+Range=[0 0.5]
+NumMFs=5
+MF1='cokDusuk':'trimf',[-0.125 0 0.0998677248677249]
+MF2='dusuk':'trimf',[0 0.0998677248677249 0.2]
+MF3='orta':'trimf',[0.101190476190476 0.247 0.399]
+MF4='yuksek':'trimf',[0.298 0.4 0.501]
+MF5='cokYuksek':'trimf',[0.400132275132275 0.5 0.625]
+
+[Output1]
+Name='toi'
+Range=[0.5 1]
+NumMFs=3
+MF1='dusuk':'linear',[0.44 -0.9 0.95]
+MF2='orta':'linear',[0.3 -0.6 0.88]
+MF3='yuksek':'linear',[0.14 -0.28 0.9]
+
+[Rules]
+1 5, 1 (1) : 1
+2 4, 2 (1) : 1
+3 3, 2 (1) : 1
+4 2, 2 (1) : 1
+5 1, 3 (1) : 1
